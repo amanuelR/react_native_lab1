@@ -7,10 +7,12 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 // Screens
 import HomeScreen from './screens/HomeScreen';
 import ContactsScreen from './screens/ContactsScreen';
+import SnapExprience from './screens/SnapExprience';
 
 //Screen names
 const homeName = "Home";
 const contactsName = "Contact";
+const snapexprience = "SnapExperience"
 
 const Tab = createBottomTabNavigator();
 
@@ -34,6 +36,10 @@ function MainContainer() {
             iconName = focused ? 'list' : 'list-outline';
 
           }
+          else if (rn === snapexprience) {
+            iconName = focused ? 'camera' : 'camera-outline';
+
+          }
 
           // You can return any component that you like here!
           return <Ionicons name={iconName} size={size} color={color} />;
@@ -44,7 +50,7 @@ function MainContainer() {
 
         <Tab.Screen options={{headerShown: false}} name={homeName} component={HomeScreen} />
         <Tab.Screen options={{headerShown: false}} name={contactsName} component={ContactsScreen} />
-
+        <Tab.Screen options={{headerShown: false}} name={snapexprience} component={SnapExprience} />
       </Tab.Navigator>
     </NavigationContainer>
     </SafeAreaProvider>

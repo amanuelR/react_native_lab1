@@ -9,93 +9,125 @@ export default function HomeScreen({ }) {
     const routeRedirect = () =>{
       Linking.openURL('https://www.amanuelreda.me/');
     }
-    const insets = useSafeAreaInsets();
     return (
         <SafeAreaView
             style={{
                  flex: 1,
                  backgroundColor: 'black',
-                 paddingTop: insets.top
+                 paddingTop: 100
                 }}
             >
             <View style={{ 
-                flex: 1, 
-                alignItems: 'center'
+                flex: 1,
+                flexDirection: 'row',
+                paddingLeft: 20,
+                paddingRight: 20
                 }}>
-                <Image
-                        source={require('../screens/images/perry.png')}
-                        style={{
-                        width: 150,
-                        height: 150,
-                        borderRadius: 75,
-                        overflow: 'hidden',
-                        borderWidth: 3,
-                        borderColor: 'black',
-                        alignItems: 'center'
-                        }}
-                    />
-                <Text
-                    style={{ fontSize: 20, fontWeight: 'bold', color: 'green' }}
-                > Amanuel Reda </Text>
+                <View style={{ 
+                flex: 1}}
+                >
+                    <Image
+                            source={require('../screens/images/perry.png')}
+                            style={{
+                            width: 150,
+                            height: 150,
+                            borderRadius: 75,
+                            overflow: 'hidden',
+                            borderWidth: 3,
+                            borderColor: 'green',
+                            alignItems: 'center'
+                            }}
+                        />
+                </View>
+                <View style={{ 
+                flex: 1,
+                flexDirection: 'column',
+                paddingTop: 25
+                }}
+                >
+                    
+                    <Text
+                        style={{ fontSize: 20, fontWeight: 'bold', color: 'green' }}
+                    > Amanuel Reda </Text>
+                    <Text
+                        style={{paddingTop:10, fontSize: 12, fontWeight: 'bold', color: 'white' }}
+                    > Hi Yall, I am a SEA scholar. Currently, I am learning how to build cross platform Apps using React Native</Text>
+                </View>
+                
+                
             </View>
+            
             <View style={{ 
-                flex: 1, 
+                flex: 1,
+                flexDirection: 'row',
+                paddingTop: 100,
+                
                 alignItems: 'center',
-                justifyContent: 'center',
-                paddingTop: 50
+                justifyContent: 'center' 
                 }}>
-                <Text
-                    style={{ fontSize: 26, fontWeight: 'bold', color: 'white' }}
-                > Education </Text>
-                <Text
-                    style={{ fontSize: 18, color: 'blue', textAlign:'left' }}
-                >Santa Monica College</Text>
-                <Text
-                    style={{ fontSize: 16, color: 'gold', textAlign:'left' }}
-                >California State University - Long Beach</Text>
+                <View>
+                        <Image
+                            source={require('../screens/images/edu.png')}
+                            style={{
+                            width: 100,
+                            height: 100,
+                            borderRadius: 50,
+                            overflow: 'hidden',
+                            borderWidth: 3,
+                            borderColor: 'green',
+                            alignItems: 'center'
+                            }}
+                        />
+                </View>
+                <View>
+                    <Text
+                        style={{paddingLeft: 10, paddingTop:10, fontSize: 18, color: 'blue', textAlign:'left' }}
+                    >Santa Monica College</Text>
+                    <Text
+                        style={{ paddingLeft: 15, paddingTop:20, fontSize: 16, color: 'gold', textAlign:'left' }}
+                    >CSULB</Text>
+                </View>
+            </View>
+
+            <View style={{ 
+                flex: 1,
+                flexDirection: 'row',
+                paddingTop: 50,
+
+                alignItems: 'center',
+                justifyContent: 'center'
+                }}>
+                <View>
+                    <Image
+                                source={require('../screens/images/progLogo.png')}
+                                style={{
+                                width: 100,
+                                height: 100,
+                                borderRadius: 50,
+                                overflow: 'hidden',
+                                borderWidth: 3,
+                                borderColor: 'green',
+                                alignItems: 'center'
+                                }}
+                            />
+                </View>
+                <View>
+                    <Text
+                        style={{paddingLeft: 15, paddingTop:10, fontSize: 16, color: 'gold', textAlign:'left' }}
+                    >Computer Science Tutor</Text>
+                    <Text
+                        style={{paddingLeft: 15, paddingTop:20, fontSize: 16, color: 'yellow', textAlign:'left' }}
+                    >SnapEngineeringAcademy</Text>
+                </View>
             </View>
             <View style={{ 
                 flex: 1, 
                 alignItems: 'center',
                 justifyContent: 'center'
                 }}>
-                <Text
-                    style={{ fontSize: 26, fontWeight: 'bold', color: 'white' }}
-                > Exprience </Text>
-                <Text
-                    style={{ fontSize: 16, color: 'gold', textAlign:'left' }}
-                >Computer Science Tutor</Text>
-                <Text
-                    style={{ fontSize: 16, color: 'yellow', textAlign:'left' }}
-                >SnapEngineeringAcademy</Text>
-            </View>
-            <View style={{ 
-                flex: 1, 
-                alignItems: 'center',
-                justifyContent: 'center'
-                }}>
-                <Text
-                    style={{ fontSize: 26, fontWeight: 'bold', color: 'white' }}
-                > Portfolio </Text>
                 <Button icon="link" mode="contained" onPress={routeRedirect}>
-                    Here
+                    Portfolio
                 </Button>
-            </View>
-            <View style={{ 
-                alignItems: 'center',
-                justifyContent: 'center'
-                }}>
-               <Text
-                    style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}
-                > Snap Exprience </Text>
-                <Slideshow 
-                dataSource={[
-                     {url: 'https://user-images.githubusercontent.com/92605110/159113015-1a3f0217-9ce0-4915-8985-75ac1baee4fa.png'},
-                     require('../screens/images/image1.jpg'),
-                     require('../screens/images/image1.jpg'),
-                     require('../screens/images/image1.jpg'),
-                     require('../screens/images/image1.jpg'),
-                ]}/>
             </View>
         </SafeAreaView>
     );
